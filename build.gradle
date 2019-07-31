@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+group 'ru.mail.cheprakov'
+version '1.0-SNAPSHOT'
+
+mainClassName = 'ru.mail.crashcourse.Application'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+run {
+    standardInput = System.in
+    args = ["composite", "chu"]
+}
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+    implementation group: 'com.google.inject', name: 'guice', version: '4.2.2'
+    implementation group: 'org.jetbrains', name: 'annotations', version: '17.0.0'
+}
